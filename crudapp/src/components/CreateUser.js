@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function ListUser () {
-
+    const navigate = useNavigate();
     const [inputs, setInputs] = useState({})
 
     const handleChange = (event) =>{
@@ -14,13 +15,17 @@ export default function ListUser () {
     const handleSubmit = (event) =>{
         event.preventDefault();
 
-        axios.post('http://localhost:81/api/user/save', inputs);
-        console.log(inputs);
+        axios.post('http://localhost:81/api/user/save', inputs)
+        .then(function(response) {
+            console.log(response.data);
+            navigate('/');
+        })
+       
     }
 
     return (
         <div>
-        <h1>List User</h1>
+        <h1>Create User</h1>
         <form onSubmit={handleSubmit}>
             <table cellSpacing="10">
                     <tbody>
