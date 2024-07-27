@@ -7,5 +7,3 @@ Crud App React, avec PHP, API, MySQL database.
 - create database en MySQL
 - creat GET, POST, PUT, et DELETE API en PHP
 - Create Read Update Delete (opérations)
-
-- le projet est cours
